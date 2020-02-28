@@ -20,8 +20,6 @@ import android.widget.TextView;
 import com.example.mytodoapp.db.TaskContract;
 import com.example.mytodoapp.db.TaskDbHelper;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -111,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
                         .setNegativeButton("Cancel", null)
                         .create();
                 dialog.show();
+            case R.id.action_switch_fragment:
+                setContentView(R.layout.activity_calc);
+                Log.d(TAG, "Current Layout : "+ this.findViewById(android.R.id.content).getTag());
+                Log.d(TAG, "Changed layout");
 
             default:
                 return super.onOptionsItemSelected(item);
